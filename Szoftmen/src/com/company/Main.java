@@ -1,6 +1,7 @@
 package com.company;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -8,7 +9,8 @@ public class Main implements ActionListener {
     JFrame window;
     JMenuBar menuBar;
     JMenu menuKosar,menuAkcio,menuAdventure,menuRPG,menuSimulation,menuStrategy;
-    JMenuItem iElerheto,iElorendeles;
+    JMenuItem iElerhetoAkcio,iElerhetoAdventure,iElerhetoRPG,iElerhetoSimulation,iElerhetoStrategy,
+            iElorendeles;
 
     Function file=new Function(this);
 
@@ -23,8 +25,11 @@ public class Main implements ActionListener {
     }
 
     private void createWindow() {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int screenWidth = screenSize.width;
+        int screenHeight = screenSize.height;
         window=new JFrame("LevelUp");
-        window.setSize(800,400);
+        window.setSize(screenWidth, screenHeight);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
@@ -51,32 +56,50 @@ public class Main implements ActionListener {
         menuBar.add(menuStrategy);
     }
     public void createFileMenu(){
-        iElerheto=new JMenuItem("Elerheto");
-        iElerheto.addActionListener(this);
-        iElerheto.setActionCommand("ElerhetoAkcio");
-        menuAkcio.add(iElerheto);
-        iElorendeles=new JMenuItem("Elorendeles");
+        //Akció gameszkó
+        iElerhetoAkcio=new JMenuItem("ElerhetoAkcio");
+        iElerhetoAkcio.addActionListener(this);
+        iElerhetoAkcio.setActionCommand("ElerhetoAkcio");
+        menuAkcio.add(iElerhetoAkcio);
+        iElorendeles=new JMenuItem("ElorendelesAkcio");
         menuAkcio.add(iElorendeles);
+        //Akció gameszkó vége
 
-       iElerheto=new JMenuItem("Elerheto");
-        menuAdventure.add(iElerheto);
-       iElorendeles=new JMenuItem("Elorendeles");
+        //Adventure gameszkó
+       iElerhetoAdventure=new JMenuItem("ElerhetoAdventure");
+        iElerhetoAdventure.addActionListener(this);
+        iElerhetoAdventure.setActionCommand("ElerhetoAdventure");
+        menuAdventure.add(iElerhetoAdventure);
+       iElorendeles=new JMenuItem("ElorendelesAdventure");
         menuAdventure.add(iElorendeles);
+        //Adventure gameszkó vége
 
-       iElerheto=new JMenuItem("Elerheto");
-        menuRPG.add(iElerheto);
-       iElorendeles=new JMenuItem("Elorendeles");
+        //RPG gameszkó
+       iElerhetoRPG=new JMenuItem("ElerhetoRPG");
+        iElerhetoRPG.addActionListener(this);
+        iElerhetoRPG.setActionCommand("ElerhetoRPG");
+        menuRPG.add(iElerhetoRPG);
+       iElorendeles=new JMenuItem("ElorendelesRPG");
         menuRPG.add(iElorendeles);
+        //RPG gameszkó vége
 
-        iElerheto=new JMenuItem("Elerheto");
-        menuSimulation.add(iElerheto);
-        iElorendeles=new JMenuItem("Elorendeles");
+        //Simulation gameszkó
+        iElerhetoSimulation=new JMenuItem("ElerhetoSimulation");
+        iElerhetoSimulation.addActionListener(this);
+        iElerhetoSimulation.setActionCommand("ElerhetoSimulation");
+        menuSimulation.add(iElerhetoSimulation);
+        iElorendeles=new JMenuItem("ElorendelesSimulation");
         menuSimulation.add(iElorendeles);
+        //Simulation gameszó vége
 
-        iElerheto=new JMenuItem("Elerheto");
-        menuStrategy.add(iElerheto);
-        iElorendeles=new JMenuItem("Elorendeles");
+        //Strategy gameszkó eleje
+        iElerhetoStrategy=new JMenuItem("ElerhetoStrategy");
+        iElerhetoStrategy.addActionListener(this);
+        iElerhetoStrategy.setActionCommand("ElerhetoStrategy");
+        menuStrategy.add(iElerhetoStrategy);
+        iElorendeles=new JMenuItem("ElorendelesStrategy");
         menuStrategy.add(iElorendeles);
+        //Strategy gameszkó vége
     }
 
 
@@ -84,7 +107,11 @@ public class Main implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String command = e.getActionCommand();
         switch (command){
-            case"ElerhetoAkcio":file.Akcio();
+            case"ElerhetoAkcio":file.Akcio(); break;
+            case"ElerhetoAdventure":file.Adventure(); break;
+            case"ElerhetoRPG":file.RPG();break;
+            case"ElerhetoSimulation":file.Simulation();break;
+            case"ElerhetoStrategy":file.Strategy();break;
         }
     }
 }
