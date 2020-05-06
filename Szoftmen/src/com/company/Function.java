@@ -9,9 +9,9 @@ public class Function implements  Labels{
     }
     public  void Implements(){
         l1.setBounds(10,10,450,500);
-        l2.setBounds(510,10,450,500);
-        l3.setBounds(1020,20,450,500);
-        l4.setBounds(320, 20,450,500);
+        l2.setBounds(500,10,450,500);
+        l3.setBounds(950,10,450,500);
+        l4.setBounds(1400, 10,450,500);
         gui.window.add(l1);
         gui.window.add(l2);
         gui.window.add(l3);
