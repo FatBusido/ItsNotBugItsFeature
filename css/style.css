@@ -667,6 +667,22 @@ img {
 	filter:alpha(opacity=90);
 	opacity: 0.9;
 }
+
+#table_about{
+    padding: 30;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+#table_con tr{
+    max-width: 350px;
+    max-height: 100px;
+}
+.felsorolas ul li{
+    list-style-type:square;
+    margin: 0px;
+    padding: 0px;
+}
 /*------------------------------ FOOTER ------------------------------*/
 #footer {
 	background: url(../images/backg2.png);
@@ -847,3 +863,5 @@ img {
 	margin: 0 0 0 6px;
 	padding: 0;
 }
+
+
